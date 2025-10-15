@@ -15,16 +15,14 @@ void setup() {
   // put your setup code here, to run once:
 pinMode(LED_BUILTIN, OUTPUT);
 analogReadResolution(12);   // Active la résolution 12 bits du SAMD21
-Serial.begin(115200);          // Démarre la communication série (pour afficher les résultats)
-  delay(1000);
-  Serial.println("Lecture de tension sur Arduino MKR Zero");
+Serial.begin(9600);          // Démarre la communication série (pour afficher les résultats)
+while (!Serial);
+Serial.println("Lecture de tension sur Arduino MKR Zero");
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   unsigned long maintenant = millis();
-
-
 
   // Clignotement LED
   if (maintenant - dernierClignotement >= intervalLED) {
@@ -32,6 +30,5 @@ void loop() {
     digitalWrite(BROCHE_LED, etatLED);
     dernierClignotement = maintenant;
   }
-
 
 }

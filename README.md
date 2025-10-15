@@ -1,17 +1,25 @@
 # Formation pour Valentin, télégestion
 
 
-## Alagorithme 
+## Algorithme 
 
-**Q : Écrire l'algorithme du Plus Grand Diviseur Commun en Python.** 
-    <R : Réalisation de l’algorithme via Euclide et du modulo pgcd(a,b)=pgcd(b,a mod b)>
-**Q : Écrire des tests par exemple avec PyTest.**
-    <R : 
-    - test sur plusieurs variables avec la commande  assert (vérifié par pytest)
-    - test semblable au précédent mais autmatisé avec  @pytest.mark.parametrize
-    - test avec la fonction math.gcd sur 10^12 variables 
-    Fiabilité ? Moyenne vu que math.gcd est basé sur le même algorithme d’euclide. Résultat, ne fonctionne qu’avec les entiers naturels, pas les relatifs. Améliorer avec une valeur absolue sur le résultat.
-    Idée pour aller plus loin, vérification avec la méthode des suites, soit un algorithme différents.> 
+### Q : Écrire l'algorithme du Plus Grand Diviseur Commun en Python.
+### R : Réalisation de l’algorithme via Euclide et du modulo pgcd(a,b)=pgcd(b,a mod b)
+
+Explications ici ....
+
+
+### Q : Écrire des tests par exemple avec PyTest.
+### R : Utilisation de la command `assert`
+
+- test sur plusieurs variables avec la commande  assert (vérifié par pytest)
+- test semblable au précédent mais autmatisé avec  @pytest.mark.parametrize
+- test avec la fonction math.gcd sur 10^12 variables 
+
+Fiabilité ? Moyenne vu que math.gcd est basé sur le même algorithme d’euclide. Résultat, ne fonctionne qu’avec les entiers naturels, pas les relatifs. Améliorer avec une valeur absolue sur le résultat.
+
+Idée pour aller plus loin, vérification avec la méthode des suites, soit un algorithme différents.
+
 
 **Q : quels sont les "corner cases" pour cet algorithme ?** 
     <R : Problématique pour les entiers relatifs, la V1 est utilisable que pour les entiers naturels.>

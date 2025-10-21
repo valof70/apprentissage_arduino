@@ -21,19 +21,28 @@ Fiabilité ? Moyenne vu que math.gcd est basé sur le même algorithme d’eucli
 Idée pour aller plus loin, vérification avec la méthode des suites, soit un algorithme différents.
 
 
-**Q : quels sont les "corner cases" pour cet algorithme ?** 
-    <R : Problématique pour les entiers relatifs, la V1 est utilisable que pour les entiers naturels.>
-**Q : En effet, comment va ton logiciel reagir si tu donne autre chose qu'un entier ? crash ? exception ? quel type de message ?**
-    <R : 
-    - Interdire les décimales, sinon déviance de l’algorithme et réslutat completement faux
-    - Fonctionnelle pour tout le reste mais résultats négatifs pour les entiers relatifs à corriger avec application 'abs()  >
+### Q : quels sont les "corner cases" pour cet algorithme ?
+### R : Problématique pour les entiers relatifs, la V1 est utilisable que pour les entiers naturels.
+
+### Q : En effet, comment va ton logiciel reagir si tu donne autre chose qu'un entier ? crash ? exception ? quel type de message ?
+### R : 
+- Interdire les décimales, sinon déviance de l’algorithme et réslutat completement faux
+- Fonctionnelle pour tout le reste mais résultats négatifs pour les entiers relatifs à corriger avec application 'abs()  
 
 **Q : Quel est la "computational complexity O" d'Euclid et de l'alternative que tu mentionne ?**
     <R :
     - Pour le théorème d’Euclide nombre d’itérations≤O(log(min(a,b))) d’après la démonstration de  Lamé.
-    - Pour la décomposition en nombre premier on est beaucoup plus important O(exp((64/9)1/3(logn)1/3(loglogn)2/3))
-    où
-    O(exp((64/9)1/3(logn)1/3(log logn)2/3))>O(log(min(a,b)))   (logarithme << exponentiel)>
+    - Pour la décomposition en nombre premier on est beaucoup plus important 
+$$
+O\left(\exp\left(\left(\frac{64}{9}\right)^{1/3}(\log n)^{1/3}(\log\log n)^{2/3}\right)\right)
+$$
+ ou
+$$
+\exp\!\left(\left(\tfrac{64}{9}\right)^{1/3}(\log n)^{1/3}(\log\log n)^{2/3}\right)
+\gg
+\log\!\bigl(\min(a,b)\bigr)
+$$
+   (logarithme << exponentiel)
 
 **Q : donc pour O(exp) tres probablement inutilisable tel quel sur un systeme embarque.**
     <R : Oui exactement, les calculs sont largement inaccecible pour les grandes valeurs. La méthode euclidienne est dailleurs la plus obtimal.>

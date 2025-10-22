@@ -5,11 +5,12 @@
 
 unsigned long dernierClignotement = 0;
 const unsigned long intervalLED = 250; // 500 ms
-bool etatLED = false;
+
 
 unsigned long dernierMesure = 0;
 const unsigned long intervalMesure = 250; // 250 ms (4 mesures/s)
 
+// RTC real time clock
 
 void setup() {
   // put your setup code here, to run once:
@@ -26,9 +27,12 @@ void loop() {
 
   // Clignotement LED
   if (maintenant - dernierClignotement >= intervalLED) {
-    etatLED = !etatLED;
-    digitalWrite(BROCHE_LED, etatLED);
+   
+    
+    digitalWrite(BROCHE_LED, !digitalRead(BROCHE_LED));
     dernierClignotement = maintenant;
+
+    deepSleep();
   }
 
 }
